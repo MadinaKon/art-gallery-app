@@ -8,8 +8,6 @@ export default function ArtPieces({
   artPiecesInfo,
   handleToggleFavorite,
 }) {
-  console.log("artPiecesInfo ArtPieces ", artPiecesInfo);
-
   return (
     <ul>
       {pieces.map(

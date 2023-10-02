@@ -13,7 +13,6 @@ export default function App({ Component, pageProps }) {
   const [artPiecesInfo, setArtPiecesInfo] = useState([]);
 
   console.log("artPiecesInfo ", artPiecesInfo);
-
   if (isLoading) return <div>loading...</div>;
   if (error) return <div>failed to load Error</div>;
   if (!data) return;
@@ -22,16 +21,14 @@ export default function App({ Component, pageProps }) {
     setArtPiecesInfo((artPiecesInfo) => {
       const info = artPiecesInfo.find((info) => info.slug === slug);
 
-      console.log("handleToggleFavorite artPiecesInfo", artPiecesInfo);
-
       if (info) {
         return artPiecesInfo.map((info) =>
           info.slug === slug ? { ...info, isFavorite: !info.isFavorite } : info
         );
+      } else {
+        return [...artPiecesInfo, { slug, isFavorite: true }];
       }
     });
-
-    return [...artPiecesInfo, { slug, isFavorite: true }];
   }
 
   return (

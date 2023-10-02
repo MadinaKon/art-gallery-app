@@ -5,9 +5,10 @@ export default function FavoriteButton({
   slug,
   artPiecesInfo,
 }) {
-  const artPieceInfoObject = artPiecesInfo.find(
+  const artPieceInfoObject = artPiecesInfo?.find(
     (artPieceInfo) => artPieceInfo.slug === slug
   );
+
   let isFavorite;
 
   if (artPieceInfoObject) {
