@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 export default function Spotlight({ image, artist }) {
-  console.log("image, artist ", image, artist);
+
   return (
     <>
       <Image

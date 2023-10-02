@@ -1,8 +1,8 @@
 import React from "react";
 import ArtPiecePreview from "../ArtPiecePreview";
+import Link from "next/link";
 
 export default function ArtPieces({ pieces }) {
-  console.log("art pieces ", pieces);
   return (
     <ul>
       {pieces.map(
@@ -20,7 +20,13 @@ export default function ArtPieces({ pieces }) {
             {artist}
             {name} {year}
             {genre}
-            <ArtPiecePreview image={imageSource} title={name} artist={artist} />
+            <Link href={`/art-pieces/${slug}`}>
+              <ArtPiecePreview
+                image={imageSource}
+                title={name}
+                artist={artist}
+              />
+            </Link>
           </li>
         )
       )}
