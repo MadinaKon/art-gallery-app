@@ -12,6 +12,8 @@ export default function App({ Component, pageProps }) {
   );
   const [artPiecesInfo, setArtPiecesInfo] = useState([]);
 
+  console.log("artPiecesInfo ", artPiecesInfo);
+
   if (isLoading) return <div>loading...</div>;
   if (error) return <div>failed to load Error</div>;
   if (!data) return;
@@ -19,6 +21,8 @@ export default function App({ Component, pageProps }) {
   function handleToggleFavorite(slug) {
     setArtPiecesInfo((artPiecesInfo) => {
       const info = artPiecesInfo.find((info) => info.slug === slug);
+
+      console.log("handleToggleFavorite artPiecesInfo", artPiecesInfo);
 
       if (info) {
         return artPiecesInfo.map((info) =>

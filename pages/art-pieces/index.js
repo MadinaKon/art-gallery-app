@@ -8,6 +8,8 @@ export default function ArtPieces({
   artPiecesInfo,
   handleToggleFavorite,
 }) {
+  console.log("artPiecesInfo ArtPieces ", artPiecesInfo);
+
   return (
     <ul>
       {pieces.map(
@@ -26,8 +28,9 @@ export default function ArtPieces({
             {name} {year}
             {genre}
             <FavoriteButton
-              isFavorite={artPiecesInfo}
               onToggleFavorite={handleToggleFavorite}
+              slug={slug}
+              artPiecesInfo={artPiecesInfo}
             />
             <Link href={`/art-pieces/${slug}`}>
               <ArtPiecePreview
