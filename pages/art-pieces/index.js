@@ -1,7 +1,8 @@
 import React from "react";
-import ArtPiecePreview from "./ArtPiecePreview";
+import ArtPiecePreview from "../ArtPiecePreview";
 
 export default function ArtPieces({ pieces }) {
+  console.log("art pieces ", pieces);
   return (
     <ul>
       {pieces.map(
