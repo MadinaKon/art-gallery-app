@@ -2,10 +2,16 @@ import React from "react";
 import Image from "next/image";
 
 export default function ArtPieceDetails({ piece }) {
-  const { image, title, artist, year, genre } = piece;
+  const { imageSource, name, artist, year, genre } = piece;
   return (
     <div>
-      <Image src={image} width={500} height={500} alt={title} />
+      <Image src={imageSource} width={500} height={500} alt={name} />
+      <ul>
+        <li>{name}</li>
+        <li>{artist}</li>
+        <li>{year}</li>
+        <li>{genre}</li>
+      </ul>
     </div>
   );
 }

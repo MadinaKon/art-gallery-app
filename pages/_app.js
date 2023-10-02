@@ -14,7 +14,6 @@ export default function App({ Component, pageProps }) {
   if (error) return <div>failed to load Error</div>;
   if (!data) return;
 
-  console.log("app data ", data);
 
   return (
     <>
