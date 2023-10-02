@@ -3,7 +3,11 @@ import ArtPiecePreview from "../ArtPiecePreview";
 import Link from "next/link";
 import FavoriteButton from "../FavoriteButton";
 
-export default function ArtPieces({ pieces, artPiecesInfo }) {
+export default function ArtPieces({
+  pieces,
+  artPiecesInfo,
+  handleToggleFavorite,
+}) {
   return (
     <ul>
       {pieces.map(
