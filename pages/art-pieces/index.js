@@ -1,8 +1,9 @@
 import React from "react";
 import ArtPiecePreview from "../ArtPiecePreview";
 import Link from "next/link";
+import FavoriteButton from "../FavoriteButton";
 
-export default function ArtPieces({ pieces }) {
+export default function ArtPieces({ pieces, artPiecesInfo }) {
   return (
     <ul>
       {pieces.map(
@@ -20,6 +21,10 @@ export default function ArtPieces({ pieces }) {
             {artist}
             {name} {year}
             {genre}
+            <FavoriteButton
+              isFavorite={artPiecesInfo}
+              onToggleFavorite={handleToggleFavorite}
+            />
             <Link href={`/art-pieces/${slug}`}>
               <ArtPiecePreview
                 image={imageSource}
