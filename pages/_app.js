@@ -12,6 +12,10 @@ export default function App({ Component, pageProps }) {
 
   if (isLoading) return <div>loading...</div>;
   if (error) return <div>failed to load Error</div>;
+  if (!data) return;
+
+  console.log("app data ", data);
+
   return (
     <>
       <Layout>
