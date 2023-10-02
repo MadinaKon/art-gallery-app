@@ -1,6 +1,12 @@
+import { slowConnection } from "swr/_internal";
 import Spotlight from "./Spotlight";
 
-export default function SpotlightPage({ pieces }) {
+export default function SpotlightPage({
+  pieces,
+  handleToggleFavorite,
+  artPiecesInfo,
+  slug,
+}) {
   function pickRandomArtPiece(array) {
     // number between 0 and array.length
     return Math.floor(Math.random() * array.length);
@@ -11,8 +17,11 @@ export default function SpotlightPage({ pieces }) {
   return (
     <div>
       <Spotlight
-        image={`${pieces[indexRandomArtPiece].imageSource}`}
+        image={pieces[indexRandomArtPiece].imageSource}
         artist={pieces[indexRandomArtPiece].artist}
+        handleToggleFavorite={handleToggleFavorite}
+        slug={pieces[indexRandomArtPiece].slug}
+        artPiecesInfo={artPiecesInfo}
       />
     </div>
   );
