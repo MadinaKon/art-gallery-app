@@ -1,7 +1,23 @@
+import useSWR, { SWRConfig } from "swr";
+import ArtPieces from "./ArtPieces";
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+
 export default function HomePage() {
+  const { data, error } = useSWR(
+    `https://example-apis.vercel.app/api/art`,
+    fetcher
+  );
+
+  console.log("DATA ", data);
+
   return (
-    <div>
-      <h1>Hello from Next.js</h1>
-    </div>
+    <SWRConfig
+      value={{
+        fetcher,
+      }}
+    >
+      <ArtPieces pieces={data} />
+    </SWRConfig>
   );
 }
