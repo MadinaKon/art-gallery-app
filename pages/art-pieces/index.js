@@ -25,18 +25,19 @@ export default function ArtPieces({
             {artist}
             {name} {year}
             {genre}
-            <FavoriteButton
+            {/* <FavoriteButton
               onToggleFavorite={handleToggleFavorite}
               slug={slug}
               artPiecesInfo={artPiecesInfo}
+            /> */}
+            <ArtPiecePreview
+              slug={slug}
+              image={imageSource}
+              title={name}
+              artist={artist}
+              handleToggleFavorite={handleToggleFavorite}
+              artPiecesInfo={artPiecesInfo}
             />
-            <Link href={`/art-pieces/${slug}`}>
-              <ArtPiecePreview
-                image={imageSource}
-                title={name}
-                artist={artist}
-              />
-            </Link>
           </li>
         )
       )}
