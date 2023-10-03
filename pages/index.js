@@ -1,5 +1,5 @@
 import { slowConnection } from "swr/_internal";
-import Spotlight from "./Spotlight";
+import Spotlight from "../components/Spotlight";
 
 export default function SpotlightPage({
   pieces,

@@ -1,21 +1,7 @@
 import React from "react";
-import ArtPiecePreview from "../ArtPiecePreview";
+import ArtPiecePreview from "../../components/ArtPiecePreview";
 import Link from "next/link";
-import FavoriteButton from "../FavoriteButton";
-import styled from "styled-components";
-
-export const StyledUl = styled.ul`
-  list-style-type: none;
-`;
-
-export const StyledSection = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px;
-`;
+import FavoriteButton from "@/components/FavoriteButton";
 
 export default function ArtPieces({
   pieces,
