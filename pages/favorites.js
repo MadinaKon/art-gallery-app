@@ -7,21 +7,18 @@ export default function Favorites({
   artPiecesInfo,
   handleToggleFavorite,
 }) {
-  // pieces which are included in artPiecesInfo and have isFavorite
-  // console.log("Favorites pieces", pieces);
-
-  // console.log("Favorites artPiecesInfo", artPiecesInfo);
-
-  const filtered = artPiecesInfo.filter(
+  const filteredInfoForisFavorite = artPiecesInfo.filter(
     (artInfo) => artInfo.isFavorite === true
   );
-
-  console.log("filtered ", filtered);
+  const filteredPieces = pieces.filter((piece) => {
+    // Check if piece's slug is included in filteredInfoForIsFavorite's slugs
+    return filteredInfoForisFavorite.some((info) => info.slug === piece.slug);
+  });
 
   return (
     <>
       <ArtPieces
-        pieces={filtered}
+        pieces={filteredPieces}
         artPiecesInfo={artPiecesInfo}
         handleToggleFavorite={handleToggleFavorite}
       />
