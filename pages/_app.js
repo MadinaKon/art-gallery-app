@@ -3,6 +3,7 @@ import useSWR, { SWRConfig } from "swr";
 import Layout from "@/components/Layout";
 import { useState } from "react";
 import { uid } from "uid";
+import useLocalStorageState from "use-local-storage-state";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -11,7 +12,10 @@ export default function App({ Component, pageProps }) {
     `https://example-apis.vercel.app/api/art`,
     fetcher
   );
-  const [artPiecesInfo, setArtPiecesInfo] = useState([]);
+  const [artPiecesInfo, setArtPiecesInfo] = useLocalStorageState(
+    "artPiecesInfo",
+    { defaultValue: [] }
+  );
 
   if (isLoading) return <div>loading...</div>;
   if (error) return <div>failed to load Error</div>;
