@@ -5,6 +5,7 @@ import FavoriteButton from "./FavoriteButton";
 import Comments from "./Comments";
 import Commentform from "./Commentform";
 import styled from "styled-components";
+import Colors from "./Colors";
 
 export const StyledSection = styled.section`
   display: flex;
@@ -28,7 +29,8 @@ export default function ArtPieceDetails({
   artPiecesInfo,
   handleAddComment,
 }) {
-  const { imageSource, name, artist, year, genre, slug } = piece;
+  const { imageSource, name, artist, year, genre, slug, colors } = piece;
+  console.log(colors);
   const pieceInfo = artPiecesInfo.find((info) => info.slug === slug);
   return (
     <>
@@ -49,6 +51,7 @@ export default function ArtPieceDetails({
         <li>{year}</li>
         <li>{genre}</li>
       </StyledUl>
+      <Colors colors={colors} />
       <h1>Comments</h1>
       <Commentform onAddComment={handleAddComment} slug={slug} />
       {pieceInfo && <Comments pieceInfo={pieceInfo} />}
