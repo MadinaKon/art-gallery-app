@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import FavoriteButton from "../FavoriteButton";
+import Comments from "@/components/Comments";
+import Commentform from "@/components/Commentform";
 
 export default function ArtPieceDetails({
   piece,
@@ -9,6 +11,7 @@ export default function ArtPieceDetails({
   artPiecesInfo,
 }) {
   const { imageSource, name, artist, year, genre, slug } = piece;
+  const pieceInfo = artPiecesInfo.find((info) => info.slug === slug);
   return (
     <div>
       <Link href={`/art-pieces`}>
@@ -26,6 +29,9 @@ export default function ArtPieceDetails({
         <li>{year}</li>
         <li>{genre}</li>
       </ul>
+      <h1>Comments</h1>
+      <Commentform />
+      {pieceInfo && <Comments pieceInfo={pieceInfo} />}
     </div>
   );
 }
