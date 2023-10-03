@@ -26,6 +26,13 @@ export const StyledImage = styled(Image)`
   height: 500px;
 `;
 
+export const StyledParagraph = styled.p`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+`;
+
 export default function Spotlight({
   image,
   artist,
@@ -50,7 +57,7 @@ export default function Spotlight({
           artPiecesInfo={artPiecesInfo}
         />
       </StyledDiv>
-      <p>{artist}</p>
+      <StyledParagraph>{artist}</StyledParagraph>
     </>
   );
 }
