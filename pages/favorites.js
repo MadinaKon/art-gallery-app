@@ -15,6 +15,8 @@ export default function Favorites({
     return filteredInfoForisFavorite.some((info) => info.slug === piece.slug);
   });
 
+  console.log("filteredPieces ", filteredPieces);
+
   return (
     <>
       <ArtPieces
