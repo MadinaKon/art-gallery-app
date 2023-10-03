@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import Image from "next/image";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
 import { StyledDiv, StyledImage, StyledParagraph } from "./Spotlight.styled.js";
 
