@@ -6,8 +6,7 @@ export default function Comments({ pieceInfo }) {
       {pieceInfo.comments?.map((comment) => (
         <li key={comment.id}>
           <h6>
-            {comment.date}
-            {comment.showTime}
+            published on:{comment.commentDate} at:{comment.commentTime}
           </h6>
           {comment.commentText}
         </li>
