@@ -2,6 +2,11 @@ import React from "react";
 import ArtPiecePreview from "../ArtPiecePreview";
 import Link from "next/link";
 import FavoriteButton from "../FavoriteButton";
+import styled from "styled-components";
+
+export const StyledUl = styled.ul`
+  list-style-type: none;
+`;
 
 export default function ArtPieces({
   pieces,
@@ -9,7 +14,7 @@ export default function ArtPieces({
   handleToggleFavorite,
 }) {
   return (
-    <ul>
+    <StyledUl>
       {pieces.map(
         ({
           slug,
@@ -22,9 +27,6 @@ export default function ArtPieces({
           dimensions,
         }) => (
           <li key={slug}>
-            {artist}
-            {name} {year}
-            {genre}
             {/* <FavoriteButton
               onToggleFavorite={handleToggleFavorite}
               slug={slug}
@@ -38,9 +40,12 @@ export default function ArtPieces({
               handleToggleFavorite={handleToggleFavorite}
               artPiecesInfo={artPiecesInfo}
             />
+            {artist}
+            {name} {year}
+            {genre}
           </li>
         )
       )}
-    </ul>
+    </StyledUl>
   );
 }

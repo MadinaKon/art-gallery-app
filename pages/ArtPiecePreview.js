@@ -3,6 +3,23 @@ import Image from "next/image";
 import Link from "next/link";
 import FavoriteButton from "./FavoriteButton";
 
+import styled from "styled-components";
+
+// export const StyledSection = styled.section`
+//   display: flex;
+//   position: relative;
+//   flex-direction: column;
+//   align-items: center;
+// `;
+
+export const StyledSection = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+`;
+
 export default function ArtPiecePreview({
   image,
   title,
@@ -13,17 +30,17 @@ export default function ArtPiecePreview({
 }) {
   return (
     <>
-      <h1>{title}</h1>
-      <p>{artist}</p>
-      <Link href={`/art-pieces/${slug}`}>
-        <Image src={image} width={500} height={500} alt={title} />
-      </Link>
+      <StyledSection>
+        <Link href={`/art-pieces/${slug}`}>
+          <Image src={image} width={500} height={500} alt={title} />
+        </Link>
 
-      <FavoriteButton
-        onToggleFavorite={handleToggleFavorite}
-        slug={slug}
-        artPiecesInfo={artPiecesInfo}
-      />
+        <FavoriteButton
+          onToggleFavorite={handleToggleFavorite}
+          slug={slug}
+          artPiecesInfo={artPiecesInfo}
+        />
+      </StyledSection>
     </>
   );
 }

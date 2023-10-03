@@ -4,15 +4,21 @@ import FavoriteButton from "./FavoriteButton";
 
 import styled from "styled-components";
 
+// export const StyledDiv = styled.section`
+//   display: flex;
+//   position: relative;
+//   padding: 10px;
+//   margin-bottom: 40px;
+//   flex-direction: column;
+//   align-items: center;
+// `;
+
 export const StyledDiv = styled.section`
   display: flex;
-  position: relative;
-  background-color: teal;
-  padding: 10px;
-  border: 1px solid black;
-  margin-bottom: 40px;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
 `;
 
 export const StyledImage = styled(Image)`
@@ -38,13 +44,13 @@ export default function Spotlight({
           width="140"
           height="140"
         />
-        <p>{artist}</p>
         <FavoriteButton
           onToggleFavorite={handleToggleFavorite}
           slug={slug}
           artPiecesInfo={artPiecesInfo}
         />
       </StyledDiv>
+      <p>{artist}</p>
     </>
   );
 }

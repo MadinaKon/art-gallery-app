@@ -1,9 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
+// export const StyledFavoriteButton = styled.button`
+//   position: absolute;
+//   height: 50px;
+//   right: 0;
+//   top: -15px;
+// `;
+
 export const StyledFavoriteButton = styled.button`
-  position: absolute;
-  height: 50px;
+  height: 30px;
   right: 0;
   top: -15px;
 `;

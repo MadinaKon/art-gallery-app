@@ -5,17 +5,24 @@ import FavoriteButton from "../FavoriteButton";
 
 import styled from "styled-components";
 
+// export const StyledSection = styled.section`
+//   display: flex;
+//   position: relative;
+//   background-color: teal;
+//   padding: 10px;
+//   border: 1px solid black;
+//   margin-bottom: 40px;
+//   flex-direction: column;
+//   align-items: center;
+// `;
+
 export const StyledSection = styled.section`
   display: flex;
-  position: relative;
-  background-color: teal;
-  padding: 10px;
-  border: 1px solid black;
-  margin-bottom: 40px;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
 `;
-
 export const Ul = styled.ul`
   display: flex;
   list-style-type: none;
