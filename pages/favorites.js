@@ -1,6 +1,6 @@
 import React from "react";
 import ArtPieces from "./art-pieces";
-import FavoriteButton from "@/components/FavoriteButton";
+import FavoriteButton from "@/components/FavoriteButton/FavoriteButton";
 
 export default function Favorites({
   pieces,

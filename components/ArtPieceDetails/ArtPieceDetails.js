@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import FavoriteButton from "./FavoriteButton";
-import Comments from "./Comments";
-import Commentform from "./Commentform";
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import Comments from "../Comments/Comments";
+import Commentform from "../Commentform/Commentform";
 import styled from "styled-components";
 
 export const StyledSection = styled.section`
