@@ -8,6 +8,15 @@ export const StyledUl = styled.ul`
   list-style-type: none;
 `;
 
+export const StyledSection = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+`;
+
 export default function ArtPieces({
   pieces,
   artPiecesInfo,
@@ -40,9 +49,11 @@ export default function ArtPieces({
               handleToggleFavorite={handleToggleFavorite}
               artPiecesInfo={artPiecesInfo}
             />
-            {artist}
-            {name} {year}
-            {genre}
+            <StyledSection>
+              {artist}
+              {name} {year}
+              {genre}
+            </StyledSection>
           </li>
         )
       )}
