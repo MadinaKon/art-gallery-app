@@ -2,23 +2,7 @@ import React, { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
-
-import styled from "styled-components";
-
-// export const StyledSection = styled.section`
-//   display: flex;
-//   position: relative;
-//   flex-direction: column;
-//   align-items: center;
-// `;
-
-export const StyledSection = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  gap: 10px;
-`;
+import { StyledSection } from "./ArtPiecePreview.styled.js";
 
 export default function ArtPiecePreview({
   image,
