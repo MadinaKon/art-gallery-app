@@ -3,13 +3,28 @@ import ArtPiecePreview from "../../components/ArtPiecePreview";
 import Link from "next/link";
 import FavoriteButton from "@/components/FavoriteButton";
 
+import styled from "styled-components";
+
+export const StyledUl = styled.ul`
+  list-style-type: none;
+`;
+
+export const StyledSection = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+`;
+
 export default function ArtPieces({
   pieces,
   artPiecesInfo,
   handleToggleFavorite,
 }) {
   return (
-    <ul>
+    <StyledUl>
       {pieces.map(
         ({
           slug,
@@ -22,9 +37,6 @@ export default function ArtPieces({
           dimensions,
         }) => (
           <li key={slug}>
-            {artist}
-            {name} {year}
-            {genre}
             {/* <FavoriteButton
               onToggleFavorite={handleToggleFavorite}
               slug={slug}
@@ -38,9 +50,14 @@ export default function ArtPieces({
               handleToggleFavorite={handleToggleFavorite}
               artPiecesInfo={artPiecesInfo}
             />
+            <StyledSection>
+              {artist}
+              {name} {year}
+              {genre}
+            </StyledSection>
           </li>
         )
       )}
-    </ul>
+    </StyledUl>
   );
 }

@@ -1,4 +1,18 @@
 import React from "react";
+import styled from "styled-components";
+
+// export const StyledFavoriteButton = styled.button`
+//   position: absolute;
+//   height: 50px;
+//   right: 0;
+//   top: -15px;
+// `;
+
+export const StyledFavoriteButton = styled.button`
+  height: 30px;
+  right: 0;
+  top: -15px;
+`;
 
 export default function FavoriteButton({
   onToggleFavorite,
@@ -18,8 +32,8 @@ export default function FavoriteButton({
   }
 
   return (
-    <button onClick={() => onToggleFavorite(slug)}>
+    <StyledFavoriteButton onClick={() => onToggleFavorite(slug)}>
       {isFavorite ? "💖" : "🤍"}
-    </button>
+    </StyledFavoriteButton>
   );
 }
