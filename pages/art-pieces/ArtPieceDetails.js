@@ -9,6 +9,7 @@ export default function ArtPieceDetails({
   piece,
   handleToggleFavorite,
   artPiecesInfo,
+  handleAddComment,
 }) {
   const { imageSource, name, artist, year, genre, slug } = piece;
   const pieceInfo = artPiecesInfo.find((info) => info.slug === slug);
@@ -30,7 +31,7 @@ export default function ArtPieceDetails({
         <li>{genre}</li>
       </ul>
       <h1>Comments</h1>
-      <Commentform />
+      <Commentform onAddComment={handleAddComment} slug={slug} />
       {pieceInfo && <Comments pieceInfo={pieceInfo} />}
     </div>
   );

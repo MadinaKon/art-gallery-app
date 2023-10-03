@@ -32,13 +32,14 @@ export default function App({ Component, pageProps }) {
   }
 
   function handleAddComment(newComment, slug) {
+    // (event) => event.preventDefault();
     const date = new Date().toLocaleDateString("en-us");
-    const showTime =
-      date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    // const showTime =
+    //   date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
     const comment = {
       id: uid(),
       commentDate: date,
-      commentTime: showTime,
+      // commentTime: showTime,
       commentText: newComment,
     };
     // {
@@ -60,6 +61,7 @@ export default function App({ Component, pageProps }) {
         ];
       }
     });
+    // event.target.reset();
   }
 
   return (
@@ -71,6 +73,7 @@ export default function App({ Component, pageProps }) {
           pieces={data}
           artPiecesInfo={artPiecesInfo}
           handleToggleFavorite={handleToggleFavorite}
+          handleAddComment={handleAddComment}
         />
       </Layout>
     </>

@@ -7,6 +7,7 @@ export default function DetailsPage({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
+  handleAddComment,
 }) {
   const router = useRouter();
 
@@ -19,6 +20,7 @@ export default function DetailsPage({
       piece={currentPiece}
       handleToggleFavorite={handleToggleFavorite}
       artPiecesInfo={artPiecesInfo}
+      handleAddComment={handleAddComment}
     />
   );
 }
