@@ -22,14 +22,6 @@ export default function ArtPieces({
           dimensions,
         }) => (
           <li key={slug}>
-            {artist}
-            {name} {year}
-            {genre}
-            {/* <FavoriteButton
-              onToggleFavorite={handleToggleFavorite}
-              slug={slug}
-              artPiecesInfo={artPiecesInfo}
-            /> */}
             <ArtPiecePreview
               slug={slug}
               image={imageSource}
@@ -38,6 +30,9 @@ export default function ArtPieces({
               handleToggleFavorite={handleToggleFavorite}
               artPiecesInfo={artPiecesInfo}
             />
+            <br />
+            {year}
+            {genre}
           </li>
         )
       )}
