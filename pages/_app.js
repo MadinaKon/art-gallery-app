@@ -32,16 +32,15 @@ export default function App({ Component, pageProps }) {
   }
 
   function handleAddComment(newComment, slug) {
-    // (event) => event.preventDefault();
-    const date = new Date().toLocaleDateString("en-us");
-    // const showTime =
-    //   date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    const date = new Date();
+    const time = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
     const comment = {
       id: uid(),
-      commentDate: date,
-      // commentTime: showTime,
+      commentDate: date.toLocaleDateString("en-us"),
+      commentTime: time,
       commentText: newComment,
     };
+    console.log(comment.commentDate);
     // {
     //   dateStyle: "medium",
     // }
@@ -61,7 +60,6 @@ export default function App({ Component, pageProps }) {
         ];
       }
     });
-    // event.target.reset();
   }
 
   return (
