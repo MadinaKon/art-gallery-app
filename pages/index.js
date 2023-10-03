@@ -5,7 +5,6 @@ export default function SpotlightPage({
   pieces,
   handleToggleFavorite,
   artPiecesInfo,
-  slug,
 }) {
   function pickRandomArtPiece(array) {
     // number between 0 and array.length
@@ -22,6 +21,7 @@ export default function SpotlightPage({
         handleToggleFavorite={handleToggleFavorite}
         slug={pieces[indexRandomArtPiece].slug}
         artPiecesInfo={artPiecesInfo}
+        name={pieces[indexRandomArtPiece].name}
       />
     </div>
   );

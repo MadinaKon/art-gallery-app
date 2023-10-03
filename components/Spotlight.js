@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import FavoriteButton from "./FavoriteButton";
+import ArtPiecePreview from "./ArtPiecePreview";
 
 export default function Spotlight({
   image,
@@ -8,23 +9,16 @@ export default function Spotlight({
   handleToggleFavorite,
   slug,
   artPiecesInfo,
+  name,
 }) {
   return (
-    <>
-      <Image
-        src={image}
-        alt="random"
-        // width={data[indexRandomArtPiece].dimensions.width}
-        // height={data[indexRandomArtPiece].dimensions.height}
-        width="140"
-        height="140"
-      />
-      <p>{artist}</p>
-      <FavoriteButton
-        onToggleFavorite={handleToggleFavorite}
-        slug={slug}
-        artPiecesInfo={artPiecesInfo}
-      />
-    </>
+    <ArtPiecePreview
+      slug={slug}
+      image={image}
+      title={name}
+      artist={artist}
+      handleToggleFavorite={handleToggleFavorite}
+      artPiecesInfo={artPiecesInfo}
+    />
   );
 }
