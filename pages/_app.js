@@ -1,6 +1,6 @@
 import GlobalStyle from "../styles";
 import useSWR, { SWRConfig } from "swr";
-import Layout from "./Layout";
+import Layout from "@/components/Layout";
 import { useState } from "react";
 import { uid } from "uid";
 

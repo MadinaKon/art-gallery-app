@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import FavoriteButton from "../FavoriteButton";
-import Comments from "@/components/Comments";
-import Commentform from "@/components/Commentform";
+import FavoriteButton from "./FavoriteButton";
+import Comments from "./Comments";
+import Commentform from "./Commentform";
 
 export default function ArtPieceDetails({
   piece,

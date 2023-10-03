@@ -1,7 +1,7 @@
 import React from "react";
-import ArtPiecePreview from "../ArtPiecePreview";
+import ArtPiecePreview from "../../components/ArtPiecePreview";
 import Link from "next/link";
-import FavoriteButton from "../FavoriteButton";
+import FavoriteButton from "@/components/FavoriteButton";
 
 export default function ArtPieces({
   pieces,
