@@ -1,38 +1,36 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { ArtPieceDetails } from "./ArtPieceDetails";
+import userEvent from "@testing-library/user-event";
 
-const artPieces = [
-  {
-    image: "artwork1.jpg",
-    title: "Artwork 1",
-    artist: "Artist 1",
-  },
-  {
-    image: "artwork2.jpg",
-    title: "Artwork 2",
-    artist: "Artist 2",
-  },
-];
+const mockArtPiece = {
+  image: "path/to/artwork.jpg",
+  title: "Artwork Title",
+  artist: "Artist Name",
+  year: "2023",
+  genre: "Abstract",
+};
 
-test("renders list of art pieces with images, titles, and artists", () => {
-  render(<ArtPieceDetails artPieces={artPieces} />);
+test("displays art piece details and back button", () => {
+  render(<ArtPieceDetails artPiece={mockArtPiece} />);
 
-  artPieces.forEach((piece) => {
-    const imageElement = screen.getByAltText(piece.title);
-    expect(imageElement).toBeInTheDocument();
+  const imageElement = screen.getByAltText("Art Piece");
+  expect(imageElement).toBeInTheDocument();
+  expect(imageElement).toHaveAttribute("src", mockArtPiece.image);
 
-    const titleElement = screen.getByText(piece.title);
-    expect(titleElement).toBeInTheDocument();
+  const titleElement = screen.getByText(mockArtPiece.title);
+  expect(titleElement).toBeInTheDocument();
 
-    const artistElement = screen.getByText(`Artist: ${piece.artist}`);
-    expect(artistElement).toBeInTheDocument();
-  });
-});
+  const artistElement = screen.getByText(`Artist: ${mockArtPiece.artist}`);
+  expect(artistElement).toBeInTheDocument();
 
-test("renders correct number of art pieces", () => {
-  render(<ArtPieceDetails artPieces={artPieces} />);
+  const yearElement = screen.getByText(`Year: ${mockArtPiece.year}`);
+  expect(yearElement).toBeInTheDocument();
 
-  const artPieceElements = screen.getAllByRole("listitem");
-  expect(artPieceElements.length).toBe(artPieces.length);
+  const genreElement = screen.getByText(`Genre: ${mockArtPiece.genre}`);
+  expect(genreElement).toBeInTheDocument();
+
+  const backButton = screen.getByText("Back to gallery");
+  expect(backButton).toBeInTheDocument();
+  userEvent.click(backButton);
 });
