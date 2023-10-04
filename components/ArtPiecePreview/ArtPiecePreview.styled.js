@@ -7,3 +7,8 @@ export const StyledSection = styled.section`
   justify-content: center;
   gap: 10px;
 `;
+
+export const StyledContainer = styled.div`
+  justify-content: center;
+  align-items: center;
+`;

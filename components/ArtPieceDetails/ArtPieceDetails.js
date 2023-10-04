@@ -4,7 +4,11 @@ import Link from "next/link";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
 import Comments from "../Comments/Comments";
 import Commentform from "../Commentform/Commentform";
-import { StyledSection, StyledUl } from "./ArtPieceDetails.styled";
+import {
+  StyledSection,
+  StyledUl,
+  StyledContainer,
+} from "./ArtPieceDetails.styled";
 import Colors from "../Colors";
 
 export default function ArtPieceDetails({
@@ -17,7 +21,7 @@ export default function ArtPieceDetails({
   console.log(colors);
   const pieceInfo = artPiecesInfo.find((info) => info.slug === slug);
   return (
-    <>
+    <StyledContainer>
       <StyledSection>
         <Link href={`/art-pieces`}>
           <button>Back to gallery</button>
@@ -39,6 +43,6 @@ export default function ArtPieceDetails({
       <h1>Comments</h1>
       <Commentform onAddComment={handleAddComment} slug={slug} />
       {pieceInfo && <Comments pieceInfo={pieceInfo} />}
-    </>
+    </StyledContainer>
   );
 }

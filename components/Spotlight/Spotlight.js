@@ -23,7 +23,6 @@ export default function Spotlight({
           artPiecesInfo={artPiecesInfo}
         />
       </StyledDiv>
-      <StyledParagraph>{artist}</StyledParagraph>
     </>
   );
 }

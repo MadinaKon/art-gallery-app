@@ -7,6 +7,7 @@ import styled from "styled-components";
 
 export const StyledUl = styled.ul`
   list-style-type: none;
+  width: 100%;
 `;
 
 export const StyledSection = styled.section`
@@ -47,8 +48,9 @@ export default function ArtPieces({
             />
 
             <StyledSection>
-              {year}
-              {genre}
+              <p>
+                {year} {genre}
+              </p>
             </StyledSection>
           </li>
         )
