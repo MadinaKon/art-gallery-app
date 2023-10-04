@@ -34,3 +34,30 @@ test("displays art piece details and back button", () => {
   expect(backButton).toBeInTheDocument();
   userEvent.click(backButton);
 });
+
+const mockItem = {
+  name: "Item Name",
+  description: "Item Description",
+};
+
+test("displays favorite button in the details view", () => {
+  render(<ArtPieceDetails item={mockItem} />);
+
+  const favoriteButton = screen.getAllByRole(
+    "FavoriteButton-styled__StyledFavoriteButton-sc-aee7e3bd-0 ZlMLo"
+  );
+  expect(favoriteButton).toBeInTheDocument();
+  expect(favoriteButton).toHaveClass(
+    "FavoriteButton-styled__StyledFavoriteButton-sc-aee7e3bd-0 ZlMLo"
+  );
+});
+
+test("displays item name and description", () => {
+  render(<ArtPieceDetails item={mockItem} />);
+
+  const nameElement = screen.getByText(mockItem.name);
+  const descriptionElement = screen.getByText(mockItem.description);
+
+  expect(nameElement).toBeInTheDocument();
+  expect(descriptionElement).toBeInTheDocument();
+});
