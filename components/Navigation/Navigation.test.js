@@ -1,6 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Navigation } from "./Navigation";
+// import { Navigation } from "./Navigation";
+import Navigation from "./Navigation";
 
 test('A navigation link labeled "Spotlight" is displayed', () => {
   render(<Navigation />);
