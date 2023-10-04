@@ -8,6 +8,7 @@ import {
   StyledSection,
   StyledUl,
   StyledContainer,
+  StyledBackButton,
 } from "./ArtPieceDetails.styled";
 import Colors from "../Colors";
 
@@ -26,7 +27,7 @@ export default function ArtPieceDetails({
     <StyledContainer>
       <StyledSection>
         <Link href={`/art-pieces`}>
-          <button>Back to gallery</button>
+          <StyledBackButton>Back to gallery</StyledBackButton>
         </Link>
         <Image
           src={imageSource}
