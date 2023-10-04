@@ -11,7 +11,10 @@ export default function ArtPiecePreview({
   handleToggleFavorite,
   slug,
   artPiecesInfo,
+  dimensions,
 }) {
+  const aspectRatio = dimensions.width / dimensions.height;
+  const calculatedWidth = 500 * aspectRatio;
   return (
     <>
       <StyledContainer>
@@ -20,7 +23,7 @@ export default function ArtPiecePreview({
       </StyledContainer>
       <StyledSection>
         <Link href={`/art-pieces/${slug}`}>
-          <Image src={image} width={500} height={500} alt={title} />
+          <Image src={image} width={calculatedWidth} height={500} alt={title} />
         </Link>
 
         <FavoriteButton

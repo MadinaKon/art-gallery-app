@@ -8,6 +8,14 @@ import styled from "styled-components";
 export const StyledUl = styled.ul`
   list-style-type: none;
   width: 100%;
+  position: relative;
+  padding: 0;
+`;
+
+export const StyledLi = styled.li`
+  width: 100%;
+  margin-left: 0;
+  margin-bottom: 300px;
 `;
 
 export const StyledSection = styled.section`
@@ -37,7 +45,7 @@ export default function ArtPieces({
           colors,
           dimensions,
         }) => (
-          <li key={slug}>
+          <StyledLi key={slug}>
             <ArtPiecePreview
               slug={slug}
               image={imageSource}
@@ -45,6 +53,7 @@ export default function ArtPieces({
               artist={artist}
               handleToggleFavorite={handleToggleFavorite}
               artPiecesInfo={artPiecesInfo}
+              dimensions={dimensions}
             />
 
             <StyledSection>
@@ -52,7 +61,7 @@ export default function ArtPieces({
                 {year} {genre}
               </p>
             </StyledSection>
-          </li>
+          </StyledLi>
         )
       )}
     </StyledUl>
