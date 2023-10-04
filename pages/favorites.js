@@ -1,6 +1,12 @@
 import React from "react";
 import ArtPieces from "./art-pieces";
 import FavoriteButton from "@/components/FavoriteButton/FavoriteButton";
+import styled from "styled-components";
+
+const StyledHeader = styled.h1`
+  margin-left: 50px;
+  margin-top: 50%;
+`;
 
 export default function Favorites({
   pieces,
@@ -16,7 +22,9 @@ export default function Favorites({
   });
 
   if (filteredPieces.length === 0) {
-    return <h1>please chose your favorites...</h1>;
+    return (
+      <StyledHeader>please chose your favorites, darling 🖤...</StyledHeader>
+    );
   }
   return (
     <>
