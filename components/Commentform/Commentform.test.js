@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import Commentform from "./Commentform";
 
 test("should render Commentform component", () => {
@@ -7,4 +7,7 @@ test("should render Commentform component", () => {
   expect(element).toBeInTheDocument();
   const commentButton = screen.getByRole("button");
   expect(commentButton).toBeInTheDocument();
+
+  // const btn = screen.getByText(/Submit/i);
+  // fireEvent.click(btn);
 });

@@ -1,10 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import ArtPiecePreview from "./ArtPiecePreview";
 
-test.skip("All art pieces are displayed as a list", () => {
+test("All art pieces are displayed as a list", () => {
   render(<ArtPiecePreview />);
 
-  const items = [
+  const artPieces = [
     {
       slug: "orange-red-and-green",
       artist: "Steve Johnson",
@@ -37,8 +37,15 @@ test.skip("All art pieces are displayed as a list", () => {
     },
   ];
 
-  const { getAllByRole } = render(<ArtPiecePreview items={items} />);
+  const { getAllByRole } = render(<ArtPiecePreview items={artPieces} />);
+  const listItems = getAllByRole("img");
+  expect(listItems).toHaveLength(2);
 
-  const listItems = getAllByRole("link");
-  expect(listItems).toBeGreaterThan(5);
+  screen.debug();
+
+  //   const { getAllByRole } = within(items);
+
+  //   const listItems = getAllByRole("img");
+  //   expect(listItems).toBeGreaterThan(5);
+  //  // expect(listItems.length).toBe(5);
 });
