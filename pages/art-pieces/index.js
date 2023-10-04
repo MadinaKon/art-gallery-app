@@ -37,11 +37,6 @@ export default function ArtPieces({
           dimensions,
         }) => (
           <li key={slug}>
-            {/* <FavoriteButton
-              onToggleFavorite={handleToggleFavorite}
-              slug={slug}
-              artPiecesInfo={artPiecesInfo}
-            /> */}
             <ArtPiecePreview
               slug={slug}
               image={imageSource}
@@ -50,6 +45,9 @@ export default function ArtPieces({
               handleToggleFavorite={handleToggleFavorite}
               artPiecesInfo={artPiecesInfo}
             />
+            <br />
+            {year}
+            {genre}
             <StyledSection>
               {artist}
               {name} {year}
