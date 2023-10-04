@@ -1,19 +1,19 @@
 import React from "react";
 import Link from "next/link";
-import { Footer, StyledUl } from "./Navigation.styled.js";
+import { Footer, StyledUl, StyledLink } from "./Navigation.styled.js";
 
 export default function Navigation() {
   return (
     <Footer>
       <StyledUl>
         <li>
-          <Link href="/">Spotlight</Link>
+          <StyledLink href="/">Spotlight</StyledLink>
         </li>
         <li>
-          <Link href="/art-pieces">Art pieces</Link>
+          <StyledLink href="/art-pieces">Art pieces</StyledLink>
         </li>
         <li>
-          <Link href="/favorites">Favorites</Link>
+          <StyledLink href="/favorites">Favorites</StyledLink>
         </li>
       </StyledUl>
     </Footer>

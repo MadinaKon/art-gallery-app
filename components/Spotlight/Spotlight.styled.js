@@ -16,6 +16,7 @@ export const StyledDiv = styled.section`
   flex-direction: column;
   justify-content: center;
   gap: 10px;
+  margin-bottom: 150px;
 `;
 
 export const StyledImage = styled(Image)`

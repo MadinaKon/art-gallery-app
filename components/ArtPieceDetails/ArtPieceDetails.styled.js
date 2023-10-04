@@ -15,3 +15,7 @@ export const StyledUl = styled.ul`
   padding: 8px;
   list-style-type: none;
 `;
+
+export const StyledContainer = styled.div`
+  margin-bottom: 100px;
+`;

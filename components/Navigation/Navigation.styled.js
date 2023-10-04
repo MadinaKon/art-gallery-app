@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const Footer = styled.footer`
@@ -17,4 +18,9 @@ export const StyledUl = styled.ul`
   color: white;
   background: #0085ff;
   z-index: 10;
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: white;
 `;
