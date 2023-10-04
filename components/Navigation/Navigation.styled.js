@@ -10,7 +10,7 @@ export const StyledUl = styled.ul`
   list-style-type: none;
   padding: 8px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   position: fixed;
   bottom: 0;
   width: 100%;

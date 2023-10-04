@@ -47,8 +47,9 @@ export default function ArtPieces({
             />
 
             <StyledSection>
-              {year}
-              {genre}
+              <p>
+                {year} {genre}
+              </p>
             </StyledSection>
           </li>
         )
