@@ -22,6 +22,7 @@ export default function SpotlightPage({
         slug={pieces[indexRandomArtPiece].slug}
         artPiecesInfo={artPiecesInfo}
         name={pieces[indexRandomArtPiece].name}
+        dimensions={pieces[indexRandomArtPiece].dimensions}
       />
     </div>
   );

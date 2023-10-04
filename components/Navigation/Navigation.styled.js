@@ -16,7 +16,7 @@ export const StyledUl = styled.ul`
   width: 100%;
   height: 80px;
   color: white;
-  background: #0085ff;
+  background: rgba(0, 100, 255, 0.8);
   z-index: 10;
 `;
 

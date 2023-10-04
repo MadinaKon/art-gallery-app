@@ -8,6 +8,7 @@ import {
   StyledSection,
   StyledUl,
   StyledContainer,
+  StyledBackButton,
 } from "./ArtPieceDetails.styled";
 import Colors from "../Colors";
 
@@ -17,16 +18,23 @@ export default function ArtPieceDetails({
   artPiecesInfo,
   handleAddComment,
 }) {
-  const { imageSource, name, artist, year, genre, slug, colors } = piece;
-  console.log(colors);
+  const { imageSource, name, artist, year, genre, slug, colors, dimensions } =
+    piece;
+  const aspectRatio = dimensions.width / dimensions.height;
+  const calculatedWidth = 500 * aspectRatio;
   const pieceInfo = artPiecesInfo.find((info) => info.slug === slug);
   return (
     <StyledContainer>
       <StyledSection>
         <Link href={`/art-pieces`}>
-          <button>Back to gallery</button>
+          <StyledBackButton>Back to gallery</StyledBackButton>
         </Link>
-        <Image src={imageSource} width={500} height={500} alt={name} />
+        <Image
+          src={imageSource}
+          width={calculatedWidth}
+          height={500}
+          alt={name}
+        />
         <FavoriteButton
           onToggleFavorite={handleToggleFavorite}
           slug={slug}
@@ -34,13 +42,14 @@ export default function ArtPieceDetails({
         />
       </StyledSection>
       <StyledUl>
-        <li>{name}</li>
+        <li>{name}</li> <br />
         <li>{artist}</li>
+        <br />
         <li>{year}</li>
+        <br />
         <li>{genre}</li>
       </StyledUl>
       <Colors colors={colors} />
-      <h1>Comments</h1>
       <Commentform onAddComment={handleAddComment} slug={slug} />
       {pieceInfo && <Comments pieceInfo={pieceInfo} />}
     </StyledContainer>

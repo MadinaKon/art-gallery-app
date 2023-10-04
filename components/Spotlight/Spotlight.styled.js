@@ -17,6 +17,7 @@ export const StyledDiv = styled.section`
   justify-content: center;
   gap: 10px;
   margin-bottom: 150px;
+  margin-top: 14px;
 `;
 
 export const StyledImage = styled(Image)`

@@ -6,4 +6,7 @@ export const StyledFavoriteButton = styled.button`
   top: -15px;
   border: none;
   background: none;
+  &:hover {
+    height: 33px;
+  }
 `;

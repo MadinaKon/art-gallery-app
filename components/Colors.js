@@ -8,6 +8,7 @@ const ColorContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   gap: 10px;
+  }
 `;
 
 export default function Colors({ colors }) {
