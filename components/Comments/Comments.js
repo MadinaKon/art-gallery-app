@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 export default function Comments({ pieceInfo }) {
   return (
-    <ul>
+    <ul style={{ listStyleType: "none" }}>
       {pieceInfo.comments?.map((comment) => (
         <li key={comment.id}>
           <h6>
