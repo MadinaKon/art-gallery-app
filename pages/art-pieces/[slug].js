@@ -1,5 +1,5 @@
 import React from "react";
-import ArtPieceDetails from "@/components/ArtPieceDetails";
+import ArtPieceDetails from "@/components/ArtPieceDetails/ArtPieceDetails";
 
 import { useRouter } from "next/router";
 

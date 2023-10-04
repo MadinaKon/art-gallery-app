@@ -1,27 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import FavoriteButton from "./FavoriteButton";
-import Comments from "./Comments";
-import Commentform from "./Commentform";
-import styled from "styled-components";
-import Colors from "./Colors";
-
-export const StyledSection = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  gap: 10px;
-`;
-
-export const StyledUl = styled.ul`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  list-style-type: none;
-`;
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import Comments from "../Comments/Comments";
+import Commentform from "../Commentform/Commentform";
+import { StyledSection, StyledUl } from "./ArtPieceDetails.styled";
+import Colors from "../Colors";
 
 export default function ArtPieceDetails({
   piece,

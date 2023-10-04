@@ -1,7 +1,7 @@
 import React from "react";
-import ArtPiecePreview from "../../components/ArtPiecePreview";
+import ArtPiecePreview from "../../components/ArtPiecePreview/ArtPiecePreview";
 import Link from "next/link";
-import FavoriteButton from "@/components/FavoriteButton";
+import FavoriteButton from "@/components/FavoriteButton/FavoriteButton";
 
 import styled from "styled-components";
 
