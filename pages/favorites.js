@@ -15,6 +15,9 @@ export default function Favorites({
     return filteredInfoForisFavorite.some((info) => info.slug === piece.slug);
   });
 
+  if (filteredPieces.length === 0) {
+    return <h1>please chose your favorites...</h1>;
+  }
   return (
     <>
       <ArtPieces
@@ -22,11 +25,6 @@ export default function Favorites({
         artPiecesInfo={artPiecesInfo}
         handleToggleFavorite={handleToggleFavorite}
       />
-      {/* <FavoriteButton
-        onToggleFavorite={handleToggleFavorite}
-        slug={slug}
-        artPiecesInfo={artPiecesInfo}
-      /> */}
     </>
   );
 }
