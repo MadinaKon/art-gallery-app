@@ -14,6 +14,8 @@ export default function ArtPiecePreview({
 }) {
   return (
     <>
+      <h1>{title}</h1>
+      <p>{artist}</p>
       <StyledSection>
         <Link href={`/art-pieces/${slug}`}>
           <Image src={image} width={500} height={500} alt={title} />

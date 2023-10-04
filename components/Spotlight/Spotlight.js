@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
 import { StyledDiv, StyledImage, StyledParagraph } from "./Spotlight.styled.js";
+import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 
 export default function Spotlight({
   image,
@@ -8,21 +9,17 @@ export default function Spotlight({
   handleToggleFavorite,
   slug,
   artPiecesInfo,
+  name,
 }) {
   return (
     <>
       <StyledDiv>
-        <StyledImage
-          src={image}
-          alt="random"
-          // width={data[indexRandomArtPiece].dimensions.width}
-          // height={data[indexRandomArtPiece].dimensions.height}
-          width="140"
-          height="140"
-        />
-        <FavoriteButton
-          onToggleFavorite={handleToggleFavorite}
+        <ArtPiecePreview
           slug={slug}
+          image={image}
+          title={name}
+          artist={artist}
+          handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
         />
       </StyledDiv>

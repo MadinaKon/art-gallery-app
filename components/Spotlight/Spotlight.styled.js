@@ -13,7 +13,7 @@ import Image from "next/image";
 export const StyledDiv = styled.section`
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   gap: 10px;
 `;

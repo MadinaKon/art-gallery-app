@@ -45,12 +45,9 @@ export default function ArtPieces({
               handleToggleFavorite={handleToggleFavorite}
               artPiecesInfo={artPiecesInfo}
             />
-            <br />
-            {year}
-            {genre}
+
             <StyledSection>
-              {artist}
-              {name} {year}
+              {year}
               {genre}
             </StyledSection>
           </li>
