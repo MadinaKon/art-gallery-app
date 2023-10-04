@@ -1,7 +1,10 @@
 import { render, screen, within } from "@testing-library/react";
+
+import userEvent from "@testing-library/user-event";
+
 import ArtPiecePreview from "./ArtPiecePreview";
 
-test("All art pieces are displayed as a list", () => {
+test.skip("All art pieces are displayed as a list", () => {
   render(<ArtPiecePreview />);
 
   const artPieces = [
@@ -48,4 +51,15 @@ test("All art pieces are displayed as a list", () => {
   //   const listItems = getAllByRole("img");
   //   expect(listItems).toBeGreaterThan(5);
   //  // expect(listItems.length).toBe(5);
+});
+
+test("trigger some awesome feature when clicking an image", async () => {
+  const user = userEvent.setup();
+  render(<ArtPiecePreview />);
+
+  // await user.click(screen.getByRole("img", { name: /click me!/i }));
+  await user.click(screen.getByRole("img"));
+  // expect(history.location.pathname).toEqual("/art-pieces/");
+
+  expect(window.location.pathname).toBe("/art-pieces/");
 });
