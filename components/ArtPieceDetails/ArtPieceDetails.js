@@ -50,7 +50,6 @@ export default function ArtPieceDetails({
         <li>{genre}</li>
       </StyledUl>
       <Colors colors={colors} />
-      <h1>Comments</h1>
       <Commentform onAddComment={handleAddComment} slug={slug} />
       {pieceInfo && <Comments pieceInfo={pieceInfo} />}
     </StyledContainer>

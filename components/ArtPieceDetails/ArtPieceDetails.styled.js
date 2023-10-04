@@ -20,6 +20,7 @@ export const StyledUl = styled.ul`
 
 export const StyledContainer = styled.div`
   margin-bottom: 100px;
+  margin-top: 50px;
 `;
 
 export const StyledBackButton = styled.button`
@@ -27,7 +28,6 @@ export const StyledBackButton = styled.button`
   padding: 0.5rem;
   background: rgba(0, 100, 255, 0.8);
   color: white;
-  top: 20px;
   left: 50px;
   &:hover {
     background: rgba(0, 100, 800, 1);
