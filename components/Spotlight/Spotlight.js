@@ -10,6 +10,7 @@ export default function Spotlight({
   slug,
   artPiecesInfo,
   name,
+  dimensions,
 }) {
   return (
     <>
@@ -21,6 +22,7 @@ export default function Spotlight({
           artist={artist}
           handleToggleFavorite={handleToggleFavorite}
           artPiecesInfo={artPiecesInfo}
+          dimensions={dimensions}
         />
       </StyledDiv>
     </>
