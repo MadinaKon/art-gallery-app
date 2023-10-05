@@ -5,7 +5,8 @@ import styled from "styled-components";
 
 const StyledHeader = styled.h1`
   margin-left: 50px;
-  margin-top: 50%;
+  margin-top: 100px;
+  padding: 0;
 `;
 
 export default function Favorites({
